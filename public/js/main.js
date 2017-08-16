@@ -8,4 +8,7 @@ $("document").ready(function(){
 	var randomNum = Math.floor(Math.random()*100);
 	var bgUrl = "url(https://meiriyiwen.com/images/new_feed/bg_"+randomNum+".jpg)"
 	$("body").css("background-image",bgUrl);
+	$(".container .button").click(function(){
+		window.location = "/random";
+	});
 });

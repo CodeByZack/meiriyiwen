@@ -3,6 +3,7 @@ var Article = require("./article_Schema.js");
 
 exports.insert=function(data) {
 	var article = new Article({
+		order: data.order,
 		title: data.title, 
 		author: data.author, 
 		content: data.content
@@ -12,7 +13,7 @@ exports.insert=function(data) {
 		if(err) {
 			console.log("Error:" + err);
 		} else {
-			console.log(res.title+" 保存成功！");
+			console.log(res.order+" 保存成功！");
 		}
 
 	});
@@ -40,28 +41,28 @@ exports.del=function(wherestr) {
 	})
 }
 
-exports.getByConditions=function(wherestr){
+exports.getByConditions=function(wherestr,fn){
     
     Article.find(wherestr, function(err, res){
         if (err) {
             console.log("Error:" + err);
         }
         else {
-            console.log("Res:" + res);
-            
+            //console.log("Res:" + res[0].title);
+            fn(res[0]);
         }
     })
 }
 
-exports.getCountsByConditions=function(wherestr){
+exports.getCountsByConditions=function(wherestr,fn){
 
     Article.count(wherestr, function(err, res){
         if (err) {
             console.log("Error:" + err);
         }
         else {
-            console.log("Res:" + res);
-            
+            //console.log("Res:" + res);
+            fn(res);
         }
     })
 }

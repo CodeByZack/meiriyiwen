@@ -35,10 +35,10 @@ function downloadFile(uri, filename, callback) {
 
 
 
-
+var nowCount ;
 
 //控制单次爬取文章数量
-var i = 50;
+var i = 200;
 //爬虫地址
 var url = "https://meiriyiwen.com/random";
 //初始url 
@@ -68,12 +68,13 @@ function startRequest(x) {
 
 			i--;
 			var article = {
-				title : article_title,
+				order: nowCount++,
+				title: article_title,
 				author: article_author,
 				content:article_text
 			}
-			var whrstr = { title : article_title };
-			dbUtils.getCountsByConditions()
+			
+
 			dbUtils.insert(article);
 			if(i>0){
 				fetchPage(url);
@@ -87,8 +88,11 @@ function startRequest(x) {
 }
 
 
+dbUtils.getCountsByConditions({}, function(count) {
+	nowCount = count;
+	fetchPage(url); //主程序开始运行
+});
 
 
 
-fetchPage(url); //主程序开始运行
 

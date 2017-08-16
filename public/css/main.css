@@ -1,0 +1,115 @@
+body{
+	background:url(https://meiriyiwen.com/images/new_feed/bg_9.jpg)  no-repeat fixed;
+	background-size: cover;
+}
+.header{
+	background: #fff;
+	height: 50px;
+	width: 100%;
+	min-width: 500px;
+	opacity: 0.9;
+}
+.header ul{
+	display: inline-block;
+	list-style: none;
+	padding: 0;
+	letter-spacing: -8px;
+}
+.header ul li{
+	
+	display: inline-block;
+	line-height: 50px;
+	width: 110px;
+	height: 50px;
+	text-align: center;
+	color: #999999;
+	letter-spacing:0;
+}
+.header ul li.current{
+	cursor: pointer;
+	background: #fcfcfc;
+	color: #20b3d8;
+	border-right: 1px solid #f8f8f8;
+	border-left: 1px solid #f8f8f8;
+	box-shadow: inset 0 9px 8px #f8f8f8;
+}
+
+.header .logo{
+	display: inline-block;
+	line-height: 50px;
+	width: 110px;
+	height: 50px;
+	text-align: center;
+	margin-left: 20px;
+	font-weight: bold;
+	color: #DDDDDD;
+}
+.container{
+	padding: 8px;
+	width: 950px;
+	margin: 40px auto;
+	background: #fff;
+	border-radius: 5px;
+}
+.container .article_show{
+	padding: 80px 50px;
+	width: 848px;
+	border: 1px dashed #dddddd;
+
+}
+
+
+.container .article_show .aricle_title{
+	text-align: center;
+    color: #000000;
+    font-weight: normal;
+    letter-spacing: 4px;	
+    
+}
+.container .article_show .aricle_author{
+	text-align: center;
+	color: #999999;
+	line-height: 30px;
+	font-size: 16px;
+	margin: 50px 0;
+}
+.container .article_show .article_content p{
+    color: #000;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 30px;
+    margin-bottom: 30px;
+    text-align: justify;	
+}
+.container .button{
+	margin: 0px auto;
+	margin-top: 50px;
+	text-align: center;
+	width: 80px;
+	background-color: #FFB94B;
+    background-image: -moz-linear-gradient(center top , #FDDB6F, #FFB94B);
+    border-color: #D69E31 #E3A037 #D5982D;
+    border-radius: 3px 3px 3px 3px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3) inset;
+    color: #8F5A0A;
+    cursor: pointer;
+    font: bold 15px Arial,Helvetica;
+    padding: 5px 15px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+}
+
+.footer{
+	background: #fff;
+	height: 70px;
+	width: 100%;
+	opacity: 0.9;	
+}
+.footer .content{
+	margin: 0 auto;
+	text-align: center;
+	line-height: 70px;
+	width: 966px;
+	color: #999999;
+}

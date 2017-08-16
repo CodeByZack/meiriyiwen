@@ -3,7 +3,8 @@
  */
 var mongoose = require('./mongodb.js'),
     Schema = mongoose.Schema;
-var ArticleSchema = new Schema({          
+var ArticleSchema = new Schema({  
+	order:  {type:Number},
     title : { type: String },                    
     author: {type: String},                      
     content: {type: String},                     

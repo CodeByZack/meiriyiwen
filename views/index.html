@@ -4,53 +4,25 @@
 		<meta charset="utf-8" />
 		<title></title>
 		<link rel="stylesheet" type="text/css" href="css/main.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
 		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 		<script type="text/javascript" src="js/main.js" ></script>
 	</head>
 	<body>
-		<div class="header">
-			<span class="logo">行者空山</span>
-			<ul>
-				<li class="current">文章</li>
-				<li>声音</li>
-				<li>书架</li>
-			</ul>
-		</div>
+
+		<% include common/header.html %>
 		<div class="container">
 			<div class="article_show">
 				<h1 class="aricle_title"><%- title%></h1>
 				<div class="aricle_author"><%- author%></div>
 				<div class="article_content">
 					<%- content%>
-					<!--<p>2155年5月17日晚上，麦琪记下了自己的日记：“今天，托米发现一本真正的书。”</p>
-					<p>这是一本很旧的书。麦琪的爷爷以前告诉她，当他还是一个小孩子的时候，他的爷爷对他讲，曾经有一个时候，所有的故事都是印在纸上的。</p>
-					<p>麦琪和托米翻着这本书，书页已经发黄，皱皱巴巴的。</p>
-					<p>他们读到的字全都静止不动，不像通常他们在屏幕上看到的那些“书”一样，会按顺序移动。这可真有趣，读到后面时再翻回来，刚才读过的字居然还停留在原地。</p>
-					<p>“多浪费呀。”托米说，“这种书一读完就得扔掉。而我们的屏幕大概已经给我们看过一百万本书了，而且它还会给我们看许多书，我可不会把它扔掉。”托米比11岁的麦琪大两岁，因此读的书也比她要多。</p>
-					<p>“你是在哪儿找到这本书的？”麦琪问托米。</p>
-					<p>“在我们家的顶楼上。”托米边全神贯注地看书边向上指了一下。</p>
-					<p>“书里写的什么？”</p>
-					<p>“学校。”</p>
-					<p>麦琪脸上露出不满意的神情。“学校有什么好写的？我讨厌学校。”</p>
-					<p>麦琪一向讨厌“学校”这个词。机器老师一次又一次地给她做地理测验，而她一次比一次答的糟糕，最后她妈妈只好把教学视察员请到家里来。</p>
-					<p>教学视察员带来一整箱工具，把机器老师拆开。麦琪暗暗希望，拆开后他就不知道怎样重新装上了。可仅仅一小时后机器老师就被装好了，黑呼呼的，又大又丑，上面还有一个很大的屏幕。在这个屏幕上，会显示出所有的课文，还会没完没了地提问题。最让麦琪痛恨的是那个槽口——每天麦琪都必须把作业和试卷塞进里面。</p>
-					<p>教学视察员把机器调好后，拍拍麦琪的脑袋对她妈妈说：“这不是小姑娘的错，机器里的地理部分调得太快了，这种事是常有的。现在我把它调慢了，已经适合十岁年龄孩子的水平了。”</p>
-					<p>麦琪失望了，她本来希望教学视察员会把这个机器老师拿走。托米的机器老师就曾被拿走过近一个月，因为它历史部分的装置完全显示不出图象来。</p>
-					<p>所以麦琪很奇怪——“怎么会有人写学校呢？”</p>
-					<p>托米白了她一眼，“因为它不是我们这种类型的学校，那是几百年前的老式学校！”</p>
-					<p>麦琪还是不明白。“就算是几百年前的学校，他们也总得有个老师吧？”</p>
-					<p>“当然。但不是我们这样的老师，而是一个真人老师。”</p>
-					<p>“真人怎么能当老师呢？”麦琪从来没见过真人还能当老师。</p>
-					<p>“那又有什么不可以？他会给孩子们讲课、提问题和留作业。”</p>-->
 				</div>
 				<div class="button">随机一篇</div>
 			</div>
 		</div>
-		<div class="footer">
-			<div class="content">
-				Powered By Zack.
-			</div>
-		</div>
+		<% include common/footer.html %>
+
 	</body>
 </html>

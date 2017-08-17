@@ -2,48 +2,7 @@ body{
 	background:url(https://meiriyiwen.com/images/new_feed/bg_9.jpg)  no-repeat fixed;
 	background-size: cover;
 }
-.header{
-	background: #fff;
-	height: 50px;
-	width: 100%;
-	min-width: 500px;
-	opacity: 0.9;
-}
-.header ul{
-	display: inline-block;
-	list-style: none;
-	padding: 0;
-	letter-spacing: -8px;
-}
-.header ul li{
-	
-	display: inline-block;
-	line-height: 50px;
-	width: 110px;
-	height: 50px;
-	text-align: center;
-	color: #999999;
-	letter-spacing:0;
-}
-.header ul li.current{
-	cursor: pointer;
-	background: #fcfcfc;
-	color: #20b3d8;
-	border-right: 1px solid #f8f8f8;
-	border-left: 1px solid #f8f8f8;
-	box-shadow: inset 0 9px 8px #f8f8f8;
-}
 
-.header .logo{
-	display: inline-block;
-	line-height: 50px;
-	width: 110px;
-	height: 50px;
-	text-align: center;
-	margin-left: 20px;
-	font-weight: bold;
-	color: #DDDDDD;
-}
 .container{
 	padding: 8px;
 	width: 950px;
@@ -100,16 +59,4 @@ body{
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
 }
 
-.footer{
-	background: #fff;
-	height: 70px;
-	width: 100%;
-	opacity: 0.9;	
-}
-.footer .content{
-	margin: 0 auto;
-	text-align: center;
-	line-height: 70px;
-	width: 966px;
-	color: #999999;
-}
+

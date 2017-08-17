@@ -10,3 +10,17 @@
 
 	原因：第一个li设置了不一样的font-size.
 	解决办法：待解决，暂时取消font-size。
+
+
+###问题2：vocie界面的 img_cover 层鼠标移入移出闪烁的问题。
+
+	原因：
+	为同级兄弟元素img绑定的mouseover，mouseout属性，当mouseover触发show函数，img_cover层出现并覆盖		了img元素，触发该img的mouseout事件，调用hide函数，又把img_cover层隐藏。再次触发mouseover。
+
+	img(show) img_cover(hide)同级，
+
+	鼠标移动到img上-->img.mousover()-->img_cover.show()-->img.mouseout()-->img_cover.hide(）-->img.mouseover()...
+
+	解决：
+	img绑定mouseover事件-->img_cover.show();
+	img_cover绑定mouseout事件-->img_cover.hide();

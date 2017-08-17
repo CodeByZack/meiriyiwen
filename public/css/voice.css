@@ -1,0 +1,74 @@
+body{
+	background: url("../img/default_bg.jpg");
+}
+.container{
+	width: 960px;
+	margin: 50px auto;	
+}
+.container h2{
+	text-align: center;
+	font-size: 1.4em;
+	font-family:  Arial, sans-serif;
+	font-weight: normal;
+}
+.container .voice_list{
+	padding: 0px 0px 30px 30px;
+	width: 930px;
+}
+.container .voice_list::after{
+	content: "";
+	display: block;
+	clear: both;
+	width: 0;
+	height: 0;
+}
+.container .voice_list .voice_item{
+	float: left;
+	margin: 30px 30px 0 0;
+	width: 280px;
+	position: relative;
+	background: #fff;
+}
+.container .voice_list .voice_item img{
+	width: 280px;
+	height: 150px;
+}
+.container .voice_list .voice_item .author{
+	
+	font-size: 14px;
+	padding: 0 8px;
+	line-height: 24px;
+	color: #333;
+	padding-bottom: 4px;	
+}
+.container .voice_list .voice_item a{
+	font-size: 14px;
+	padding: 0 8px;
+	line-height: 24px;
+	color: #333;
+	text-decoration: none;
+}
+.container .voice_list .voice_item .title a:hover{
+	text-decoration: underline;
+}
+.container .voice_list .voice_item .voice_num{
+	position: absolute;
+	top: 6px;
+	left: 6px;
+    font-size: 12px;
+    padding: 0 3px;
+    background: #3f3f3f;
+    color: #fff;
+ 	
+    line-height: 20px;	
+}
+.container .voice_list .voice_item .img_cover{
+	width: 280px;
+    height: 150px;
+    background: url(../img/voice_pic/cover_play.png)no-repeat 50% 50% #000;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: none;
+    opacity: 0.7;	
+}

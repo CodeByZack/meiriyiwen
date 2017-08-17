@@ -27,7 +27,9 @@ app.get('/random', function (req, res) {
 	});
 });
 
-
+app.get('/voice', function (req, res) {
+	res.render("voice");
+});
 var server = app.listen(3000, function () {
   var host = server.address().address;
   var port = server.address().port;

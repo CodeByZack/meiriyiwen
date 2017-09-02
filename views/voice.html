@@ -13,7 +13,23 @@
 		<div class="container">
 			<h2>声音作品</h2>
 			<div class="voice_list">
-				<div class="voice_item">
+				
+				
+
+				<% if (data.length) { %>
+					<% data.forEach(function(voice_item){ %>
+						<div class="voice_item">
+							<div class="img_cover"></div>
+							<img src=<%-voice_item.img_src %> class="img" />
+							<div class="title"><a href=""><%-voice_item.title %></a></div>
+							<div class="author"><%-voice_item.author %></div>
+							<span class="voice_num"><%-voice_item.voice_num %></span>
+						</div> 
+				    <% }) %>    
+				<% } %>
+				
+				
+				<!--<div class="voice_item">
 					<div class="img_cover"></div>
 					<img src="img/voice_pic/448_img.jpg"  class="img" />
 					<div class="title"><a href="">老白干</a></div>
@@ -55,7 +71,7 @@
 					<div class="title"><a href="">老白干</a></div>
 					<div class="author">作者：寒秋 主播：陈易</div>	
 					<span class="voice_num">448期</span>
-				</div>
+				</div>-->
 			</div>			
 		</div>
 		<% include common/footer.html %>

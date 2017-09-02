@@ -5,12 +5,6 @@ var request = require('request');
 //数据库工具
 var dbUtils = require("./db/dbUtils.js");
 
-//var fileUrl = 'http://static.meiriyiwen.com/20111225.mp3';
-//var filename = '20111225.mp3';
-//downloadFile(fileUrl, filename, function() {
-//	console.log(filename + '下载完毕');
-//});
-
 //工具函数
 function savedContent(fileName,content) {
 	
@@ -27,11 +21,6 @@ function downloadFile(uri, filename, callback) {
 	var stream = fs.createWriteStream("./MP3/"+filename);
 	request(uri).pipe(stream).on('close', callback);
 }
-
-
-
-
-
 
 
 

@@ -3,7 +3,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 var request = require('request');
 
-
+//var voiceDBUtils = require("./db/voiceDBUtils.js");
 
 /*
  *两个工具类
@@ -26,21 +26,44 @@ function savedContent(fileName,content) {
 }
 
 
+//voiceDBUtils.getCountsByConditions({},function(res){
+//	console.log("Res:" + res);
+//});
+
+//voiceDBUtils.getByConditions({"voice_num":"439期"},function(res){
+//	console.log("Res:" + res.title);
+//});
+
+//voiceDBUtils.getVoiceByPage(12,2);
 
 
-var o
-var num = 101;
-function readContent(fileName){
-	fs.readFile(fileName,"utf-8",function(err,data){
-		if(err)console.log(err);
-		else{
-			
-			//console.log(data);
-			o = JSON.parse(data);
-			downloadMP3();
-		}
-	});
-}
+//var o;
+//
+//function readContent(fileName){
+//	fs.readFile(fileName,"utf-8",function(err,data){
+//		if(err)console.log(err);
+//		else{
+//			//console.log(data);
+//			o = JSON.parse(data);
+//			o.desc.forEach(function(data){
+//				var voice = {
+//					img_src:  data.img_src,
+//  				title : data.title,                    
+//  				author: data.author,                      
+//  				voice_num: data.voice_num, 
+//  				voice_url: data.voice_url 
+//				};		
+//				console.log(voice);
+//				voiceDBUtils.insert(voice);
+//			});
+//
+//			
+//			
+//		}
+//	});
+//}
+//
+//readContent("./json/voice_item_detail.json");
 /*
  *下载声音文件
  * 需要 下载地址 在 o[key]里，key为“num+期”
@@ -71,7 +94,7 @@ function downloadMP3(){
 	//
 }
 
-readContent("./json/voice_num_url.json");
+
 
 
 
@@ -148,15 +171,20 @@ var img_url_f = "http://voice.meiriyiwen.com/upload_imgs/"
 var img_url_b = "_img.jpg";
 var img_url_b_250 = "_img_250.jpg";
 
-//var x = 1;
-//for(;x<462;x++){
-//	var uri = img_url_f+x+img_url_b_250;
-//	var filename = x+"_img_250.jpg";
-//	downloadFile(uri,filename,function(){
-//		console.log(filename+"下载完了！");
-//	});
-//}
+var x = 1;
+function getimgsrc(){
+	var uri = img_url_f+x+img_url_b_250;
+	var filename = x+"_img_250.jpg";
+	downloadFile(uri,filename,function(){
+		console.log(filename+"下载完了！");
+		if(x<461){
+			x++;
+			getimgsrc();
+		}
+	});	
+}
 
+getimgsrc();
 
 
 

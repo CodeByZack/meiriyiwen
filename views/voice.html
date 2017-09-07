@@ -2,11 +2,14 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/voice.css"/>
 		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
 		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+		
 		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
 		<script type="text/javascript" src="js/voice.js"></script>
-		<link rel="stylesheet" type="text/css" href="css/voice.css"/>
+		
 	</head>
 	<body>
 		<% include common/header.html %>
@@ -14,8 +17,6 @@
 			<h2>声音作品</h2>
 			<div class="voice_list">
 				
-				
-
 				<% if (data.length) { %>
 					<% data.forEach(function(voice_item){ %>
 						<div class="voice_item">
@@ -28,52 +29,24 @@
 				    <% }) %>    
 				<% } %>
 				
-				
-				<!--<div class="voice_item">
-					<div class="img_cover"></div>
-					<img src="img/voice_pic/448_img.jpg"  class="img" />
-					<div class="title"><a href="">老白干</a></div>
-					<div class="author">作者：寒秋 主播：陈易</div>
-					<span class="voice_num">448期</span>
-				</div>
-				<div class="voice_item">
-					<div class="img_cover"></div>
-					<img src="img/voice_pic/448_img.jpg"  class="img" />
-					<div class="title"><a href="">老白干</a></div>
-					<div class="author">作者：寒秋 主播：陈易</div>	
-					<span class="voice_num">448期</span>
-				</div>
-				<div class="voice_item">
-					<div class="img_cover"></div>
-					<img src="img/voice_pic/448_img.jpg"  class="img" />
-					<div class="title"><a href="">老白干</a></div>
-					<div class="author">作者：寒秋 主播：陈易</div>	
-					<span class="voice_num">448期</span>
-				</div>
-				<div class="voice_item">
-					<div class="img_cover"></div>
-					<img src="img/voice_pic/448_img.jpg"  class="img" />
-					<div class="title"><a href="">老白干</a></div>
-					<div class="author">作者：寒秋 主播：陈易</div>		
-					<span class="voice_num">448期</span>
-				</div>
-				<div class="voice_item">
-					<div class="img_cover"></div>
-					<img src="img/voice_pic/448_img.jpg"  class="img" />
-					<div class="title"><a href="">老白干</a></div>
-					<div class="author">作者：寒秋 主播：陈易</div>	
-					<span class="voice_num">448期</span>
-				</div>
-
-				<div class="voice_item">
-					<div class="img_cover"></div>
-					<img src="img/voice_pic/448_img.jpg"  class="img" />
-					<div class="title"><a href="">老白干</a></div>
-					<div class="author">作者：寒秋 主播：陈易</div>	
-					<span class="voice_num">448期</span>
-				</div>-->
+			</div>	
+			<div class="nav">
+				<a href="/voice2">首页</a>
+				<% if (arrary) { %>
+					<% arrary.forEach(function(num){ %>
+						<% if(num == page){ %>
+							<a class="nowPage" href=<%- "http://localhost:3000/voice2?page=" + num %>><%-num %></a>
+						<% }else{%>
+							<a href=<%- "/voice2?page=" + num %>><%-num %></a>
+						<% }%>
+						
+				    <% }) %>    
+				<% } %>				
+				...
 			</div>			
 		</div>
+
 		<% include common/footer.html %>
 	</body>
+
 </html>

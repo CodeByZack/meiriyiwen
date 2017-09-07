@@ -6,19 +6,15 @@ $("document").ready(function(){
 		$(this).addClass("current");
 	}).mouseout(function(){
 		$(this).removeClass("current");
-		$(".header li").eq(0).addClass("current");
+		$(".header li").eq(1).addClass("current");
 	});
 	
-	$(".container .voice_list img").mouseover(function(){
-		//$(this).siblings(".img_cover").show();
-		$(this).siblings(".img_cover").css("display","block");
-		$(this).siblings(".img_cover").css("cursor","pointer");
-		console.log("mouseover");
-	});
-	
-	$(".container .voice_list .img_cover").mouseout(function(){
-		//$(this).hide();
-		$(this).css("display","none");
-		console.log("mouseout");
+	$(".voice_item").each(function(){
+	    $(this).mouseenter(function(){
+	        $(this).find(".img_cover").show();
+	    });
+	    $(this).mouseleave(function(){
+	        $(this).find(".img_cover").hide();
+	    });
 	});
 });

@@ -38,10 +38,10 @@ mongdb + mongoose + express + cheerio + ejs
 # 项目截图
 
 ## 主页面
-<img src='https://github.com/CodeByZack/meiriyiwen/tree/master/public/img/main.png' width="800" height="400" />
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/main.png' width="800" height="400" />
 
 ## 声音列表页面
-<img src='https://github.com/CodeByZack/meiriyiwen/tree/master/public/img/voicelist.png' width="800" height="400" />
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/voicelist.png' width="800" height="400" />
 
 ## 声音播放页面
-<img src='https://github.com/CodeByZack/meiriyiwen/tree/master/public/img/voiceplay.png' width="800" height="400" />
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/voiceplay.png' width="800" height="400" />

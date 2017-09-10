@@ -45,3 +45,9 @@ mongdb + mongoose + express + cheerio + ejs
 
 ## 声音播放页面
 <img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/voiceplay.png' width="800" height="400" />
+
+# Todo
+
+* 适配移动端界面
+* 响应式布局
+* webapp

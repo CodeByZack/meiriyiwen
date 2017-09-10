@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" href="css/play.css" />
+		
+		<script type="text/javascript" src="js/jquery-2.1.0.js" ></script>
+		<script type="text/javascript" src="js/play.js"></script>
+		<title></title>
+	</head>
+	<body style="background-image: url(<%- img_src%>);">
+		<% include common/header.html %>
+		
+		<div class="play_bk">
+			<h1><%- title%></h1>
+			<p><%- author%></p>
+
+			<div class="player_custom">
+				<audio src=<%- voice_url%>></audio>
+				<img src="img/play.png"/>
+				<div class="wrap">
+					<div class="title"><%- title%></div>
+					<div class="seekbar">
+						<span class="seekbar_jd"></span>
+					</div>						
+				</div>
+				<span class="current_time">01:45</span>
+			</div>
+			<a class="moreBtn">更多节目</a>
+		</div>
+		
+		<% include common/footer.html %>
+	</body>
+</html>

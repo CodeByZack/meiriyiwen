@@ -3,7 +3,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 var request = require('request');
 //数据库工具
-var dbUtils = require("./db/dbUtils.js");
+//var dbUtils = require("./db/dbUtils.js");
 
 //工具函数
 function savedContent(fileName,content) {
@@ -77,11 +77,23 @@ function startRequest(x) {
 }
 
 
-dbUtils.getCountsByConditions({}, function(count) {
-	nowCount = count;
-	fetchPage(url); //主程序开始运行
-});
+//dbUtils.getCountsByConditions({}, function(count) {
+//	nowCount = count;
+//	fetchPage(url); //主程序开始运行
+//});
 
+
+	var num =4;
+	var arrary =[num];
+	for(var i=1;i<5;i++){
+		if(num-i>0){
+			console.log(num-i);
+			arrary.unshift(num-i);
+		}
+		arrary.push(num+i);
+		console.log(num+i);
+	}
+	console.log(arrary);
 
 
 

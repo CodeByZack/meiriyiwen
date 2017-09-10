@@ -14,4 +14,4 @@ var VoiceSchema = new Schema({
     voice_num: {type: String}, 
     voice_url: {type: String}, 
 });
-module.exports = mongoose.model('Voice',VoiceSchema);
+module.exports = mongoose.model('Voice2',VoiceSchema);

@@ -20,24 +20,26 @@
 				<% if (data.length) { %>
 					<% data.forEach(function(voice_item){ %>
 						<div class="voice_item">
-							<div class="img_cover"></div>
+							<a class="img_cover" href=<%- "/play?num=" + voice_item.voice_num.replace("期","") %>>
+							</a>
 							<img src=<%-voice_item.img_src %> class="img" />
 							<div class="title"><a href=""><%-voice_item.title %></a></div>
 							<div class="author"><%-voice_item.author %></div>
 							<span class="voice_num"><%-voice_item.voice_num %></span>
+							
 						</div> 
 				    <% }) %>    
 				<% } %>
 				
 			</div>	
 			<div class="nav">
-				<a href="/voice2">首页</a>
+				<a href="/voicelist">首页</a>
 				<% if (arrary) { %>
 					<% arrary.forEach(function(num){ %>
 						<% if(num == page){ %>
-							<a class="nowPage" href=<%- "http://localhost:3000/voice2?page=" + num %>><%-num %></a>
+							<a class="nowPage" href=<%- "/voicelist?page=" + num %>><%-num %></a>
 						<% }else{%>
-							<a href=<%- "/voice2?page=" + num %>><%-num %></a>
+							<a href=<%- "/voicelist?page=" + num %>><%-num %></a>
 						<% }%>
 						
 				    <% }) %>    

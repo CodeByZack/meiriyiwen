@@ -24,3 +24,14 @@
 	解决：
 	img绑定mouseover事件-->img_cover.show();
 	img_cover绑定mouseout事件-->img_cover.hide();
+	
+###简单算法问题 给定一个数字 num ,求出num之前依次递减的4个数字，之后一次增加的4个数字。
+
+	var num;
+	var arrary =[num];
+	for(var i=0;i<4;i++){
+		if(num-i>0){
+			arrary.shift(num-i);
+		}
+		arrary.push(num+i);
+	}

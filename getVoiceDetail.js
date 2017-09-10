@@ -3,7 +3,7 @@ var fs = require('fs');
 var cheerio = require('cheerio');
 var request = require('request');
 
-//var voiceDBUtils = require("./db/voiceDBUtils.js");
+var voiceDBUtils = require("./db/voiceDBUtils.js");
 
 /*
  *两个工具类
@@ -38,32 +38,45 @@ function savedContent(fileName,content) {
 
 
 //var o;
-//
+//var num=0 ;
 //function readContent(fileName){
 //	fs.readFile(fileName,"utf-8",function(err,data){
 //		if(err)console.log(err);
 //		else{
 //			//console.log(data);
 //			o = JSON.parse(data);
-//			o.desc.forEach(function(data){
-//				var voice = {
-//					img_src:  data.img_src,
-//  				title : data.title,                    
-//  				author: data.author,                      
-//  				voice_num: data.voice_num, 
-//  				voice_url: data.voice_url 
-//				};		
-//				console.log(voice);
-//				voiceDBUtils.insert(voice);
-//			});
 //
-//			
-//			
+//			console.log(o.desc[0]);
+//
+//			test();
+//	
 //		}
 //	});
 //}
 //
+//function test(){
+//	
+//	console.log(num);
+//	var voice = {
+//		img_src:  o.desc[num].img_src,
+//  	title : o.desc[num].title,                    
+//  	author: o.desc[num].author,                      
+//  	voice_num: o.desc.length-num+"期", 
+//  	voice_url: o.desc[num].voice_url 
+//	};	
+//			
+//			
+//
+//	voiceDBUtils.insert(voice,function(res){
+//		console.log(num+"插入成功！");
+//		num++;
+//		if(num<o.desc.length){
+//			test();
+//		}				
+//	});
+//}
 //readContent("./json/voice_item_detail.json");
+
 /*
  *下载声音文件
  * 需要 下载地址 在 o[key]里，key为“num+期”
@@ -171,20 +184,22 @@ var img_url_f = "http://voice.meiriyiwen.com/upload_imgs/"
 var img_url_b = "_img.jpg";
 var img_url_b_250 = "_img_250.jpg";
 
+var img_bk_url_f = "https://meiriyiwen.com/images/new_feed/bg_";
+var img_bk_url_b = ".jpg";
 var x = 1;
 function getimgsrc(){
-	var uri = img_url_f+x+img_url_b_250;
-	var filename = x+"_img_250.jpg";
+	var uri = img_bk_url_f+x+img_bk_url_b;
+	var filename = x+"_bk.jpg";
 	downloadFile(uri,filename,function(){
 		console.log(filename+"下载完了！");
-		if(x<461){
+		if(x<98){
 			x++;
 			getimgsrc();
 		}
 	});	
 }
 
-getimgsrc();
+//getimgsrc();
 
 
 

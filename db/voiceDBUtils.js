@@ -1,8 +1,8 @@
-var Voice = require("./voice_Schema.js");
+var Voice2 = require("./voice_Schema.js");
 
 
-exports.insert=function(data) {
-	var voice = new Voice({
+exports.insert=function(data,fn) {
+	var voice = new Voice2({
 		img_src:  data.img_src,
     	title : data.title,                    
     	author: data.author,                      
@@ -14,6 +14,9 @@ exports.insert=function(data) {
 		if(err) {
 			console.log("Error:" + err);
 		} else {
+			if(fn){
+				fn(res);
+			}
 			console.log(res.title+" 保存成功！");
 		}
 
@@ -22,7 +25,7 @@ exports.insert=function(data) {
 
 exports.update=function(wherestr,updatestr) {
 
-	Voice.update(wherestr, updatestr, function(err, res) {
+	Voice2.update(wherestr, updatestr, function(err, res) {
 		if(err) {
 			console.log("Error:" + err);
 		} else {
@@ -33,7 +36,7 @@ exports.update=function(wherestr,updatestr) {
 
 exports.del=function(wherestr) {
 
-	Voice.remove(wherestr, function(err, res) {
+	Voice2.remove(wherestr, function(err, res) {
 		if(err) {
 			console.log("Error:" + err);
 		} else {
@@ -44,7 +47,7 @@ exports.del=function(wherestr) {
 
 exports.getByConditions=function(wherestr,fn){
     
-    Voice.find(wherestr, function(err, res){
+    Voice2.find(wherestr, function(err, res){
         if (err) {
             console.log("Error:" + err);
         }
@@ -57,7 +60,7 @@ exports.getByConditions=function(wherestr,fn){
 
 exports.getCountsByConditions=function(wherestr,fn){
 
-    Voice.count(wherestr, function(err, res){
+    Voice2.count(wherestr, function(err, res){
         if (err) {
             console.log("Error:" + err);
         }
@@ -69,7 +72,7 @@ exports.getCountsByConditions=function(wherestr,fn){
 }
 
 exports.getVoiceByPage=function(pageSize,page,fn){
-	Voice.find(function(err,res){
+	Voice2.find(function(err,res){
 		if(err){
 			console.log(err);
 		}else{

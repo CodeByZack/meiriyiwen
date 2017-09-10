@@ -1,0 +1,101 @@
+body{
+	background: no-repeat fixed;;
+	background-size: cover;
+	
+	min-height: 100%;
+}
+
+.footer{
+	position: absolute;
+	bottom: 0;
+	
+}
+
+.play_bk{
+	text-align: center;
+	border-radius: 5px;
+	width: 500px;
+	min-height: 300px;
+	margin: 90px auto;
+	background: #fff;
+	padding: 30px;
+	opacity: 0.9;
+}
+
+.play_bk h1{
+	letter-spacing: 4px;
+	font-weight: bold;
+	color: #000000;
+	font: normal 26px/1 Verdana, Helvetica;
+	
+}
+
+.play_bk p{
+	margin: 30px 0;
+	
+}
+
+.play_bk .player{
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.play_bk .moreBtn{
+	background-color: #ffb94b;
+	border-radius: 3px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: #d69e31 #e3a037 #d5982d #e3a037;
+    padding: 5px 15px;
+    cursor: pointer;
+    font: bold 15px Arial, Helvetica;
+    color: #8f5a0a;
+}
+
+.player_custom{
+	background-color: #ebebeb;
+	border-radius: 3px;
+	width: 400px;
+	height: 50px;
+	text-align: left;
+	position: relative;
+	margin:60px auto;
+	opacity: 1;
+}
+.player_custom img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 10px;
+	width: 30px;
+	height: 30px;
+}
+.player_custom .wrap{
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-top: 3px;
+}
+.player_custom .wrap .title{
+	font-size: 14px;
+	line-height: 30px;
+}
+.player_custom .wrap .seekbar{
+	background-color: #b7e2b7;
+
+}
+
+.player_custom .wrap .seekbar .seekbar_jd{
+
+	display: block;
+	width: 0%;
+	background-color: #5bb952;
+	height: 3px;
+	
+}
+
+.player_custom .current_time{
+	position: absolute;
+    right: 10px;
+    font-size: 10px;
+    top: 25px;
+}

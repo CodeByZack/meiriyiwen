@@ -32,13 +32,12 @@ app.get('/random', function (req, res) {
 	});
 });
 
-
 var voicePageCount ;
 voiceDBUtils.getCountsByConditions({},function(num){
 	voicePageCount = num/12+1;
 	
 });
-app.get('/voice2', function (req, res) {
+app.get('/voicelist', function (req, res) {
 	
 	
 	console.log(req.query);
@@ -70,8 +69,20 @@ app.get('/voice2', function (req, res) {
 });
 
 
+
 app.get('/play',function(req,res){
-	res.render("voiceplay");
+	
+	var v_num = {};
+	
+	if(req.query.num){
+		v_num.voice_num = req.query.num+"期";
+		voiceDBUtils.getByConditions(v_num,function(voice){
+		
+			voice.img_src = voice.img_src.replace("_250","");
+			res.render("voiceplay",voice);
+		});
+	}
+
 });
 
 

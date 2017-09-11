@@ -67,13 +67,13 @@ mongdb + mongoose + express + cheerio + ejs
 ## 移动端界面截图
 
 ### 主页面
-<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/marticle.png' width="800" height="400" />
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/marticle.png' width="418" height="736" />
 
 ### 声音列表页面
-<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/mlist.png' width="800" height="400" />
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/mlist.png' width="418" height="736" />
 
 ### 声音播放页面
-<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/mplay.png' width="800" height="400" />
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/mplay.png' width="418" height="736" />
 
 
 # Todo

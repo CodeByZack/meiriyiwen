@@ -50,6 +50,7 @@ body{
     cursor: pointer;
     font: bold 15px Arial, Helvetica;
     color: #8f5a0a;
+    text-decoration: none;
 }
 
 .player_custom{

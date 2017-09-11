@@ -1,0 +1,130 @@
+.header{
+    background: #ffffff;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-weight: bold;
+}
+
+.header a {
+    display: inline-block;
+    padding: 15px 15px;
+    color: #999;
+    font-size: 1.1em;
+    border-right: 1px solid #eee;
+    text-decoration: none;
+}
+.header a:first-child {
+    border-left: 1px solid #eee;
+}
+
+body{
+	
+	background-size: cover;
+}
+
+.play_bk{
+	text-align: center;
+	border-radius: 5px;
+	margin: 4em 1em;
+	background: #fff;
+	padding: 1em;
+	opacity: 0.9;
+}
+
+.play_bk h1{
+	letter-spacing: 4px;
+	font-weight: bold;
+	color: #000000;
+	font-size: 1.3em;
+	
+}
+
+.play_bk p{
+	margin: 30px 0;
+	
+}
+
+.play_bk .player{
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+
+.player_custom{
+	background-color: #ebebeb;
+	border-radius: 3px;
+	width: 80%;
+	height: 50px;
+	text-align: left;
+	position: relative;
+	margin:2em auto;
+	opacity: 1;
+}
+.player_custom img{
+	position: absolute;
+	left: 0;
+	top: 0;
+	padding: 10px;
+	width: 30px;
+	height: 30px;
+}
+.player_custom .wrap{
+	margin-left: 50px;
+	margin-right: 50px;
+	padding-top: 3px;
+}
+.player_custom .wrap .title{
+	font-size: 14px;
+	line-height: 30px;
+}
+.player_custom .wrap .seekbar{
+	background-color: #b7e2b7;
+
+}
+
+.player_custom .wrap .seekbar .seekbar_jd{
+
+	display: block;
+	width: 0%;
+	background-color: #5bb952;
+	height: 3px;
+	
+}
+
+.player_custom .current_time{
+	position: absolute;
+    right: 10px;
+    font-size: 10px;
+    top: 25px;
+}
+
+.random_btn{
+	text-align: center;
+}
+.random_btn a {
+	text-decoration: none;
+    padding: 10px 35px;
+    border: 1px solid #ddd;
+    background: rgb(253, 219, 111);
+    display: inline-block;
+    margin-bottom: 40px;
+    font-size: 1.1em;
+    border-radius: 5px;
+    color: #333;
+    min-width: 100px;
+}
+
+.footer{
+	opacity: 0.5;
+	padding-top: 1em;
+	text-align: center;
+	font-size: 1em;
+	
+}
+
+.footer a{
+	
+	text-decoration: none;
+}

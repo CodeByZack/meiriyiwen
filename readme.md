@@ -46,8 +46,37 @@ mongdb + mongoose + express + cheerio + ejs
 ## 声音播放页面
 <img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/voiceplay.png' width="800" height="400" />
 
+
+
+# 移动端界面适配
+
+出乎意料的简单，可能是因为页面的内容单一简单，并不需要做太多的改动，基本套用pc界面的结构.
+
+这里只说下怎么实现的pc和移动端的处理的。没有采用响应式布局。
+
+通过User-Agent来判断是移动端还是PC端，分别返回对应的的模板，数据没有变动。如下
+
+	if(is_mobile(req)){
+		res.render("m/mindex",article);
+	}else{
+		res.render("index",article);
+	}
+
+这样做肯定是有坑的，原凉我是个新手。现在server.js代码也比较乱，需要整理下。
+
+## 移动端界面截图
+
+### 主页面
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/marticle.png' width="800" height="400" />
+
+### 声音列表页面
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/mlist.png' width="800" height="400" />
+
+### 声音播放页面
+<img src='https://github.com/CodeByZack/meiriyiwen/blob/master/public/img/mplay.png' width="800" height="400" />
+
+
 # Todo
 
-* 适配移动端界面
 * 响应式布局
 * webapp

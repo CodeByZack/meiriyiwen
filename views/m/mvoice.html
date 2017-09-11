@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/m/mvoice.css"/>
+		<title></title>
+	</head>
+	<body>
+		<div class="header">
+			<a href="/">文章</a>
+			<a href="/voicelist">声音</a>
+			<a href="">关于</a>
+		</div>
+		
+		<div class="container">
+
+			<% if (data.length) { %>
+			<% data.forEach(function(voice_item){ %>
+			<div class="voice_card">
+				<a class="voice_img" href=<%- "/play?num=" + voice_item.voice_num.replace("期","") %> ">
+					<img src=<%-voice_item.img_src.replace("_250","") %>>
+				</a>
+				<div class="voice_title">
+					<a href=<%- "/play?num=" + voice_item.voice_num.replace("期","") %> ">
+						<%-voice_item.title %>
+					</a>
+					<span class="voice_tag"><%-voice_item.voice_num %></span></div>
+				<div class="voice_author">
+					<%-voice_item.author %>
+				</div>
+			
+			</div>
+			<% }) %>
+			<% } %>
+		</div>
+			<div class="nav">
+				<a href="/voicelist">首页</a>
+				<% if (arrary) { %>
+					<% arrary.forEach(function(num){ %>
+						<% if(num == page){ %>
+							<a class="nowPage" href=<%- "/voicelist?page=" + num %>><%-num %></a>
+						<% }else{%>
+							<a href=<%- "/voicelist?page=" + num %>><%-num %></a>
+						<% }%>
+						
+				    <% }) %>    
+				<% } %>				
+				...
+			</div>		
+		
+		<div class="footer">
+			<a href="">关于</a>
+			<a href="">建议</a>
+			
+			<p>Powered By Zack.</p>
+		</div>
+		
+	</body>
+</html>

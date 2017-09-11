@@ -1,0 +1,95 @@
+.header{
+    background: #ffffff;
+    width: 100%;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    text-align: center;
+    font-weight: bold;
+}
+.header a {
+    display: inline-block;
+    padding: 15px 15px;
+    color: #999;
+    font-size: 1.1em;
+    border-right: 1px solid #eee;
+    text-decoration: none;
+}
+.header a:first-child {
+    border-left: 1px solid #eee;
+}
+
+body{
+	background: #eeeeee;
+}
+
+.container .voice_card{
+	
+	box-sizing: border-box;
+    border: 1px solid #dddddd;
+    
+    background: #fff;
+    position: relative;
+    margin: 20px 10px;
+}
+
+.container .voice_card .voice_img{
+	width: 100%;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.container .voice_card img{
+	width: 100%;
+    margin: 0 auto;
+}
+.container .voice_card .voice_title a{
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 0 10px;
+    line-height: 30px;
+    color: #000;
+    text-decoration: none;
+}
+
+.container .voice_card .voice_tag{
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    background: #333;
+    color: #fff;
+    padding: 3px 6px;
+    border-radius: 4px;
+}
+.container .voice_card .voice_author{
+    padding: 0 10px;
+    line-height: 30px;	
+} 
+
+.nav{
+	padding: 25px 0;
+	text-align: center;
+}
+.nav a {
+	text-decoration: none;
+    padding: 5px 8px;
+    color: #999;
+    border: 1px solid #ddd;
+    background: #eee;
+    border-radius: 4px;
+}
+.nav .nowPage{
+	color: #fff;
+	background: #777;
+}
+.footer{
+	opacity: 0.5;
+	padding-top: 1em;
+	text-align: center;
+	font-size: 1em;
+	color: #999;
+}
+
+.footer a{
+	color: #999;
+	text-decoration: none;
+}

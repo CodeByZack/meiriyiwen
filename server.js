@@ -1,6 +1,10 @@
 var express = require('express');
 var app = express();
 var _ = require('lodash');
+
+
+var qiniu = "http://oztlwbo2e.bkt.clouddn.com/";
+
 //数据库工具
 var dbUtils = require("./db/dbUtils.js");
 var voiceDBUtils = require("./db/voiceDBUtils.js");

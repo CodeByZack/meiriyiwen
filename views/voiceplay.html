@@ -10,7 +10,8 @@
 		<script type="text/javascript" src="js/play.js"></script>
 		<title></title>
 	</head>
-	<body style="background-image: url(<%- img_src%>);">
+	<!--voice_item.img_src.replace("/upload_imgs/","http://oztlwbo2e.bkt.clouddn.com/")-->
+	<body style="background-image: url(<%- img_src.replace('/upload_imgs/','http://oztlwbo2e.bkt.clouddn.com/') %>);">
 		<% include common/header.html %>
 		
 		<div class="play_bk">
@@ -18,7 +19,8 @@
 			<p><%- author%></p>
 
 			<div class="player_custom">
-				<audio src=<%- voice_url%>></audio>
+				<!--/voice/448.mp3-->
+				<audio src=<%- voice_url.replace('/voice/','http://oztlwbo2e.bkt.clouddn.com/')%>></audio>
 				<img src="img/play.png"/>
 				<div class="wrap">
 					<div class="title"><%- title%></div>

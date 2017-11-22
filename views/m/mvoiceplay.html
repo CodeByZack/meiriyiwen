@@ -10,7 +10,7 @@
 		
 		<title></title>
 	</head>
-	<body style="background: url(<%- img_src%>) repeat fixed center top #F0F8FF;">
+	<body style="background: url(<%- img_src.replace('/upload_imgs/','http://oztlwbo2e.bkt.clouddn.com/')%>) repeat fixed center top #F0F8FF;">
 		<div class="header">
 			<a href="/">文章</a>
 			<a href="/voicelist">声音</a>
@@ -21,7 +21,7 @@
 			
 
 			<div class="player_custom">
-				<audio src=<%- voice_url%>></audio>
+				<audio src=<%- voice_url.replace('/voice/','http://oztlwbo2e.bkt.clouddn.com/')%>></audio>
 				<img src="img/play.png"/>
 				<div class="wrap">
 					<div class="title"><%- title%></div>

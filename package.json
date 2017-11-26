@@ -4,6 +4,8 @@
   "description": "meiriyiwen",
   "main": "server.js",
   "dependencies": {
+    "express-session": "^1.15.6",
+    "cookie-parser": "^1.4.3",
     "body-parser": "^1.17.2",
     "cheerio": "^1.0.0-rc.2",
     "connect-multiparty": "^2.0.0",

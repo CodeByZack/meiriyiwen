@@ -1,5 +1,5 @@
 var express = require('express');
-
+var dbUtils = require("./db/dbUtils.js");
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var  session = require('express-session');
@@ -41,8 +41,10 @@ function checkUsr(usr,password){
 app.get("/login",function(req, res){
   res.render('login.html');
 }).post('/login', function (req, res) {
+  console.log(req.body);
   if(!req.body.username || !req.body.password){
     res.send("输入不能为空！");
+    return;
   }
   if(!checkUsr(req.body.username,req.body.password)){
     res.send('用户名或密码错误');
@@ -81,18 +83,28 @@ app.post("/article/del",function(req,res){
 });
 app.post("/article/modify",function(req,res){
   if(req.session.sign){
-    //modifyArticle();
-    res.send({code:0,msg:""});    
+    modifyArticle();
+    //res.send({code:0,msg:""});    
   }else{
     res.send({code:-1,msg:"登录过期！"});
   }
 });
 app.post("/article/list",function(req,res){
   if(req.session.sign){
-    //listArticle();
-    res.send({code:0,msg:""});    
+    listArticle(res);
+    //res.send({code:0,msg:""});    
   }else{
     res.send({code:-1,msg:"登录过期！"});
   }
 });
+
+function listArticle(res){
+  dbUtils.getCountsByConditions({}, function(count) {
+			dbUtils.getByConditions({
+				order: count - 1
+			}, function(article) {
+        res.send(article);
+			});
+		});
+}
 app.listen(8080);

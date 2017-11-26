@@ -133,7 +133,10 @@
           elem: '#end' //指定元素
         });
       });
+      $.post('/article/list',{} , function (text, status) {
+              console.log(text);
 
+            });
        /*用户-停用*/
       function member_stop(obj,id){
           layer.confirm('确认要停用吗？',function(index){

@@ -90,21 +90,23 @@ app.post("/article/modify",function(req,res){
   }
 });
 app.post("/article/list",function(req,res){
+  var page = req.body.page;
   if(req.session.sign){
-    listArticle(res);
+    listArticle(res,page);
     //res.send({code:0,msg:""});    
   }else{
     res.send({code:-1,msg:"登录过期！"});
   }
 });
 
-function listArticle(res){
-  dbUtils.getCountsByConditions({}, function(count) {
-			dbUtils.getByConditions({
-				order: count - 1
-			}, function(article) {
-        res.send(article);
-			});
-		});
+function listArticle(res,page){
+  dbUtils.getArticleByPage(10,page,function(articleList){
+    res.send(articleList);
+  });
+}
+function delArticle(res,){
+  dbUtils.del(str,function(articleList){
+    res.send(articleList);
+  });
 }
 app.listen(8080);

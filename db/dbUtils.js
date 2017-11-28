@@ -29,8 +29,8 @@ exports.update=function(wherestr,updatestr) {
 		}
 	})
 }
-
-exports.del=function(wherestr) {
+//wherestr = {'author' : 'Tracy McGrady','title':"World War 2"}
+exports.del=function(wherestr,fn) {
 
 	Article.remove(wherestr, function(err, res) {
 		if(err) {
@@ -67,3 +67,13 @@ exports.getCountsByConditions=function(wherestr,fn){
     })
 }
 
+exports.getArticleByPage=function(pageSize,page,fn){
+	Article.find(function(err,res){
+		if(err){
+			console.log(err);
+		}else{
+			//console.log(res);
+			fn(res);
+		}
+	}).skip(pageSize*(page-1)).limit(pageSize);
+}

@@ -1,10 +1,10 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/article');
+
 /**
-  * 连接成功
-  */
+ * 连接成功
+ */
 mongoose.connection.on('connected', function () {    
-    console.log('Mongoose connection open !!!!!' );  
+    console.log('Mongoose connection success !!!!!' );  
 });    
 
 /**
@@ -13,11 +13,19 @@ mongoose.connection.on('connected', function () {
 mongoose.connection.on('error',function (err) {    
     console.log('Mongoose connection error: ' + err);  
 });    
- 
+
 /**
  * 连接断开
  */
 mongoose.connection.on('disconnected', function () {    
     console.log('Mongoose connection disconnected');  
 });
-module.exports = mongoose;
+
+let mongo = {
+    connect : function(path){
+        mongoose.connect(path,{useMongoClient:true});
+    },
+    mongoose:mongoose
+};
+
+module.exports = mongo;

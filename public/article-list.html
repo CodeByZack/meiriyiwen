@@ -44,99 +44,129 @@
       <xblock>
         <button class="layui-btn layui-btn-danger" onclick="delAll()"><i class="layui-icon"></i>批量删除</button>
         <!-- <button class="layui-btn" onclick="x_admin_show('添加用户','./member-add.html',600,400)"><i class="layui-icon"></i>添加</button> -->
-        <span class="x-right" style="line-height:40px">共有数据：88 条</span>
+        <span id="totalArticle" class="x-right" style="line-height:40px">共有数据：88 条</span>
       </xblock>
       <table class="layui-table">
         <thead>
           <tr>
-            <th>
-              <div class="layui-unselect header layui-form-checkbox" lay-skin="primary"><i class="layui-icon">&#xe605;</i></div>
-            </th>
-            <th>ID</th>
+            <th>文章ID</th>
             <th>标题</th>
             <th>作者</th>
-            <th>内容</th>
+            <th>添加时间</th>
             <th>操作</th></tr>
         </thead>
         <tbody>
           <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
             <td>1</td>
             <td>小明</td>
             <td>男</td>
             <td>456666666666465</td>
             <td class="td-manage">
-              <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
+              <a onclick="" href="javascript:;"  title="删除">
                 <i class="layui-icon">&#xe601;</i>
               </a>
               <a title="编辑"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
                 <i class="layui-icon">&#xe642;</i>
               </a>
-              <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
-                <i class="layui-icon">&#xe631;</i>
-              </a>
-              <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                <i class="layui-icon">&#xe640;</i>
-              </a>
+
             </td>
           </tr>
           <tr>
-            <td>
-              <div class="layui-unselect layui-form-checkbox" lay-skin="primary" data-id='2'><i class="layui-icon">&#xe605;</i></div>
-            </td>
             <td>1</td>
             <td>小明</td>
             <td>男</td>
             <td>456666666666465</td>
             <td class="td-manage">
-              <a onclick="member_stop(this,'10001')" href="javascript:;"  title="启用">
+              <a onclick="member_stop(this,'10001')" href="javascript:;"  title="删除">
                 <i class="layui-icon">&#xe601;</i>
               </a>
               <a title="编辑"  onclick="x_admin_show('编辑','member-edit.html',600,400)" href="javascript:;">
                 <i class="layui-icon">&#xe642;</i>
-              </a>
-              <a onclick="x_admin_show('修改密码','member-password.html',600,400)" title="修改密码" href="javascript:;">
-                <i class="layui-icon">&#xe631;</i>
-              </a>
-              <a title="删除" onclick="member_del(this,'要删除的id')" href="javascript:;">
-                <i class="layui-icon">&#xe640;</i>
               </a>
             </td>
           </tr>
         </tbody>
       </table>
-      <div class="page">
-        <div>
-          <a class="prev" href="">&lt;&lt;</a>
-          <a class="num" href="">1</a>
-          <span class="current">2</span>
-          <a class="num" href="">...</a>
-          <a class="num" href="">489</a>
-          <a class="next" href="">&gt;&gt;</a>
-        </div>
+      <div id="page" style="text-align:center">
       </div>
 
     </div>
     <script>
-      layui.use('laydate', function(){
-        var laydate = layui.laydate;
+      // layui.use('laydate', function(){
+      //   var laydate = layui.laydate;
         
-        //执行一个laydate实例
-        laydate.render({
-          elem: '#start' //指定元素
-        });
+      //   //执行一个laydate实例
+      //   laydate.render({
+      //     elem: '#start' //指定元素
+      //   });
 
-        //执行一个laydate实例
-        laydate.render({
-          elem: '#end' //指定元素
+      //   //执行一个laydate实例
+      //   laydate.render({
+      //     elem: '#end' //指定元素
+      //   });
+      // });
+      $.post('/article/list',{page:1} , function (text, status) {
+
+      });
+      $.post('/article/list',{page:1} , function (text, status) {
+        var data = JSON.parse(text);
+        console.log(data);
+        $("#totalArticle").text("共有数据:"+data.totalArticle+"条");
+        for(var i =0;i<data.data.length;i++){
+          var $item=$("<tr>"
+            +"<td>"+i+"</td>"
+            +"<td>"+data.data[i].title+"</td>"
+            +"<td>"+data.data[i].author+"</td>"
+            +"<td>"+"2017-10-02"+"</td>"
+            +"<td class='td-manage'>"
+            +"<a title='删除'  onclick="+"member_stop()"+"href='javascript:;'><i class='layui-icon'>&#xe642;</i></a>"
+            +"<a title='编辑'  onclick="+"x_admin_show('编辑','member-edit.html',600,400)"+" href='javascript:;'><i class='layui-icon'>&#xe642;</i></a>"
+            +"</td>"
+            +"</tr>");
+          $("tbody").append($item);
+        }
+        layui.use('laypage', function(){
+          var laypage = layui.laypage;
+          //执行一个laypage实例
+          laypage.render({
+            elem: 'page' //注意，这里的 test1 是 ID，不用加 # 号
+          ,count: data.totalArticle //数据总数，从服务端得到
+          ,jump: function(obj, first){
+            //obj包含了当前分页的所有参数，比如：
+            console.log(obj.curr); //得到当前页，以便向服务端请求对应页的数据。
+            console.log(obj.limit); //得到每页显示的条数
+            
+            //首次不执行
+            if(!first){
+              //do something
+              $("tbody").empty();
+              $.post('/article/list',{page:obj.curr},function(text, status){
+                var data = JSON.parse(text);
+                $("#totalArticle").text("共有数据:"+data.totalArticle+"条");
+                for(var i =0;i<data.data.length;i++){
+                  var $item=$("<tr>"
+                  +"<td>"+i+"</td>"
+                  +"<td>"+data.data[i].title+"</td>"
+                  +"<td>"+data.data[i].author+"</td>"
+                  +"<td>"+"2017-10-02"+"</td>"
+                  +"<td class='td-manage'>"
+                  +"<a title='删除'  onclick="+"member_stop()"+"href='javascript:;'><i class='layui-icon'>&#xe642;</i></a>"
+                  +"<a title='编辑'  onclick="+"x_admin_show('编辑','member-edit.html',600,400)"+" href='javascript:;'><i class='layui-icon'>&#xe642;</i></a>"
+                  +"</td>"
+                  +"</tr>");
+                  $("tbody").append($item);
+                }
+              });
+            }
+          }
+          });
         });
       });
-      $.post('/article/list',{} , function (text, status) {
-              console.log(text);
 
-            });
+
+
+
+
        /*用户-停用*/
       function member_stop(obj,id){
           layer.confirm('确认要停用吗？',function(index){

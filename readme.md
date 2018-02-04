@@ -63,7 +63,8 @@ mongdb + mongoose + express + cheerio + ejs
 		res.render("index",article);
 	}
 
-这样做肯定是有坑的，原凉我是个新手。现在server.js代码也比较乱，需要整理下。
+~~这样做肯定是有坑的，原凉我是个新手。现在server.js代码也比较乱，需要整理下。~~
+这样做肯定是有坑的，原凉我是个新手。server.js已整理。
 
 ## 移动端界面截图
 
@@ -79,6 +80,7 @@ mongdb + mongoose + express + cheerio + ejs
 
 # Todo
 
+* 后台管理，可以增删改查数据（自己给自己挖了坑，数据库的结构可能要重新设计下）。
 * 响应式布局
 * webapp
 * 安卓原生开发

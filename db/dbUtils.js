@@ -1,16 +1,15 @@
 var Article = require("./mongo_Schema.js").article;
 var Voice2 =  require("./mongo_Schema.js").voice;
+var ImgPath =  require("./mongo_Schema.js").articleImgPath;
 let dbUtils = {}
 
 dbUtils.insertArticle=function(data) {
 	var article = new Article({
-		order: data.order,
 		title: data.title, 
 		author: data.author, 
 		content: data.content
 	});
 	article.save(function(err, res) {
-
 		if(err) {
 			console.log("Error:" + err);
 		} else {
@@ -44,17 +43,35 @@ dbUtils.delArticle=function(wherestr,fn) {
 	})
 }
 
-dbUtils.getArticleByConditions=function(wherestr,fn){
-    
-    Article.find(wherestr, function(err, res){
+dbUtils.getRandomArticle = function(fn) {
+	Article.count({}, function(err, res){
         if (err) {
+            console.log("Error:" + err);
+        }
+        else {
+			var num = RandomNum(0, res);
+			Article.find({}).skip(num).limit(1).exec(function(err,res){
+				if(err){
+					console.log(err);
+				}else{
+					fn(res[0]);
+				}	
+			});
+        }
+    })
+
+}
+
+dbUtils.getArticleByConditions=function(wherestr,fn){
+	Article.find(wherestr).limit(1).sort({_id: -1}).exec(function(err,res){
+		if (err) {
             console.log("Error:" + err);
         }
         else {
             //console.log("Res:" + res[0].title);
             fn(res[0]);
         }
-    })
+	});
 }
 
 dbUtils.getArticleCountsByConditions=function(wherestr,fn){
@@ -162,5 +179,20 @@ dbUtils.getVoiceByPage=function(pageSize,page,fn){
 	}).skip(pageSize*(page-1)).limit(pageSize);
 }
 
-
+dbUtils.getImgPathCounts = function(fn){
+	ImgPath.count({},function(err,res){
+		if(err){
+			console.log(err);
+		}else{
+			var num = RandomNum(0, res);
+			ImgPath.find({}).skip(num).limit(1).exec(function(err,res){
+				if(err){
+					console.log(err);
+				}else{
+					fn(res[0]);
+				}	
+			});
+		}
+	});
+}
 module.exports = dbUtils

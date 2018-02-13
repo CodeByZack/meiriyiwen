@@ -24,6 +24,7 @@ dbUtils.getArticleCountsByConditions({},function(num){
 });
 
 // 正常请求的日志
+/*
 app.use(expressWinston.logger({
   transports: [
     new (winston.transports.Console)({
@@ -34,10 +35,11 @@ app.use(expressWinston.logger({
       filename: 'logs/success.log'
     })
   ]
-}))
+}))*/
 // 路由
 routes(app)
 // 错误请求的日志
+/*
 app.use(expressWinston.errorLogger({
   transports: [
     new winston.transports.Console({
@@ -48,7 +50,7 @@ app.use(expressWinston.errorLogger({
       filename: 'logs/error.log'
     })
   ]
-}))
+}))*/
 
 var server = app.listen(config.port, function () {
   var host = server.address().address;

@@ -5,7 +5,7 @@ const router = express.Router()
 router.get("/",function(req,res){
     dbUtils.getImgPathCounts(function(imgPath) {
         dbUtils.getArticleByConditions({}, function(article) {
-            if(!article){
+            if(article == undefined){
                 return res.send("数据库无资源！");
             }
             var temp = article.content;

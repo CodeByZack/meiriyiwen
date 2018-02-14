@@ -5,6 +5,9 @@ const router = express.Router()
 router.get("/",function(req,res){
     dbUtils.getImgPathCounts(function(imgPath) {
         dbUtils.getArticleByConditions({}, function(article) {
+            if(!article){
+                return res.send("数据库无资源！");
+            }
             var temp = article.content;
             temp = temp.replace(/\n/g,'</p><p>');
             temp = '<p>'+temp+'</p>';

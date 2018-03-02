@@ -15,6 +15,7 @@ router.get("/",function(req,res){
 	voice_page_data.page = nowPage;
 
 	dbUtils.getVoiceByPage(12, nowPage, function(voice) {
+		console.log(voice.img_url);
 		voice_page_data.data = voice;
 		if(is_mobile(req)){
 			for(var i = 1; i < 4; i++) {

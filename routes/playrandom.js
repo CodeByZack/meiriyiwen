@@ -5,10 +5,10 @@ const router = express.Router()
 router.get("/",function(req,res){
 	var v_num = {};
 	
-	v_num.voice_num = RandomNum(0, voicePageCount) + "期";
+	v_num.voice_num = RandomNum(0, voiceCounts);
+	console.log(v_num.voice_num);
+	console.log(voiceCounts);
 	dbUtils.getVoiceByConditions(v_num, function(voice) {
-	
-		voice.img_src = voice.img_src.replace("_250", "");
 		if(is_mobile(req)) {
 			res.render("m/mvoiceplay", voice);
 		} else {

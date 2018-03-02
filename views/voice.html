@@ -19,11 +19,13 @@
 				
 				<% if (data.length) { %>
 					<% data.forEach(function(voice_item){ %>
+					<% console.log(data)%>
 						<div class="voice_item">
-							<a class="img_cover" href=<%- "/play?num=" + voice_item.voice_num.replace("期","") %>>
+							<a class="img_cover" href=<%- "/play?num=" + voice_item.voice_num%>>
 							</a>
 							<!--/upload_imgs/448_img_250.jpg-->
-							<img src=<%-voice_item.img_src.replace("/upload_imgs/","http://oztlwbo2e.bkt.clouddn.com/") %> class="img" />
+							<img  src=<%-voice_item.img_url+"" %> class="img">
+							<!-- <img class="img" src="dsdsdsd"/> -->
 							<div class="title"><a href=""><%-voice_item.title %></a></div>
 							<div class="author"><%-voice_item.author %></div>
 							<span class="voice_num"><%-voice_item.voice_num %></span>

@@ -7,7 +7,7 @@ var ArticleSchema = new Schema({
 },{timestamps: {createdAt: 'created', updatedAt: 'updated'}});
 
 var VoiceSchema = new Schema({  
-	img_src:  {type:String},
+	img_url:  {type:String},
     title : { type: String },                    
     author: {type: String},                      
     voice_num: {type: String}, 

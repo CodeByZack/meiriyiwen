@@ -5,9 +5,8 @@ const router = express.Router()
 router.get("/",function(req,res){
 	var v_num = {};
 	if(req.query.num && req.query.num<=voiceCounts){
-		v_num.voice_num = req.query.num+"期";
+		v_num.voice_num = req.query.num;
 		dbUtils.getVoiceByConditions(v_num,function(voice){
-			voice.img_src = voice.img_src.replace("_250","");
 			if(is_mobile(req)){
 				res.render("m/mvoiceplay",voice);
 			}else{

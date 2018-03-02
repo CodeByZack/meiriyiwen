@@ -20,7 +20,7 @@
 			<% data.forEach(function(voice_item){ %>
 			<div class="voice_card">
 				<a class="voice_img" href=<%- "/play?num=" + voice_item.voice_num.replace("期","") %> ">
-					<img src=<%-voice_item.img_src.replace("_250","").replace("/upload_imgs/","http://oztlwbo2e.bkt.clouddn.com/") %>>
+					<img src=<%-voice_item.img_url %>>
 				</a>
 				<div class="voice_title">
 					<a href=<%- "/play?num=" + voice_item.voice_num.replace("期","") %> ">
